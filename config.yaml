@@ -1,0 +1,23 @@
+# path to where the model is saved at
+model_path: 's3://phil-sparks-test-bucket/trained_model' 
+# path containing the raw email data with tags
+tagged_emails_raw_path: 's3://phil-sparks-test-bucket/emails_tagged'
+# path containing the raw email data with no tags
+nontagged_emails_raw_path: 's3://phil-sparks-test-bucket/emails_nontagged'
+# path for storage of intermediate parquet version of email data with tags
+tagged_emails_pipeline_path: 's3://phil-sparks-test-bucket/pipeline/parsed_tagged'
+# path for storage of intermediate parquet version of email data with no tags
+nontagged_emails_pipeline_path: 's3://phil-sparks-test-bucket/pipeline/parsed_nontagged'
+# list of categories
+category_types: 
+  [
+    'emails_tagged/business', 
+    'emails_tagged/chain_mails', 
+    'emails_tagged/emails', 
+    'emails_tagged/enron_online', 
+    'emails_tagged/general_announcements',
+    'emails_tagged/human_resources',
+    'emails_tagged/personal'
+  ]
+# Set your ML classification algorithm. Options are: LogisticRegression, DecisionTreeClassifier, RandomForestClassifier, MultilayerPerceptronClassifier, GradientBoostedTrees
+model_type: 'RandomForestClassifier'
