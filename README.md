@@ -11,7 +11,7 @@ assess which folder a user should place their email in, giving them automatic or
 
 1. Clone the repository, and navigate to the downloaded folder.
 ```
-git clone https://github.com/philip-sparks/Springboard-MLE-Capstone.git
+git clone https://github.com/philip-sparks/Springboard-AI/email_capstone/
 ```
 
 2. Download dataset.
@@ -43,7 +43,7 @@ git clone https://github.com/philip-sparks/Springboard-MLE-Capstone.git
     1. Select "Create cluster"
     2. Set the s3 folder to the location of your bucket.
     3. Use the Spark application with any emr-5.2x release.
-    4. Set your instance type to m5.xlarge
+    4. Set your instance type to m5.xlarge (or possibly m5.2xlarge)
     5. Use a PEM key for your EC2 key pair. You cannot SSH in without one.
     6. Select "Create cluster" again
     ```
@@ -68,8 +68,8 @@ git clone https://github.com/philip-sparks/Springboard-MLE-Capstone.git
     ```
     1. Login: ssh -i ~/Downloads/sb-test-1.pem hadoop@ec2-34-229-64-64.compute-1.amazonaws.com
     2. cd email_prod_folder; sudo pip install -r requirements.txt
-    3. python preprocessing.py
-    4. python train.py
+    3. python (or spark-submit) preprocessing.py
+    4. python (or spark-submit) train.py
     5. python unittests.py
     - Your model has been trained, tested and is now ready for production.
     ```
