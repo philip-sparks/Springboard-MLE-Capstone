@@ -40,8 +40,9 @@ git clone https://github.com/philip-sparks/Springboard-AI/email_capstone/
 3. Setup your Amazon S3 buckets.
   - [Amazon S3](https://s3.console.aws.amazon.com/s3/)
     ```
-    1. Select "Create bucket", with a unqiue name, but no special configuration
-    2. Create the following four folders: `emails_tagged`, `emails_nontagged`, `pipeline`, `trained_model`
+    1. Select "Create bucket", with a unique name, but no special configuration settings
+    2. Create the following four folders: `emails_tagged`, `emails_nontagged`, 
+        `pipeline`, `trained_model`
     3. Place the Kaggle mirror `emails.csv` file within `emails_nontagged`
     4. Place the tagged email folders within `emails_tagged`
     ```
