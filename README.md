@@ -88,7 +88,7 @@ git clone https://github.com/philip-sparks/Springboard-AI/email_capstone/
     2. Go to your EC2 instance at port 1234. e.g.http://ec2-54-160-243-194.compute-1.amazonaws.com:1234/
     3. You'll be given a welcome message and instructions for accessing the model.
     4. Open another terminal and type the following command:curl -H "Content-Type: application/json" -d '{"Body" : "Your Message"}' http://your-ec2-instance.compute.amazonaws.com:1234/predict
-    5. If you received a prediction back, congratulations! That's what the proceeding 35 were for.
+    5. If you received a prediction back, congratulations! That's what the proceeding 35 steps were for.
 ```
 
 ## FAQ
