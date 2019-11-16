@@ -11,7 +11,7 @@ assess which folder a user should place their email in, giving them automatic or
 
 1. Clone the repository, and navigate to the downloaded folder.
 ```
-git clone https://github.com/philip-sparks/Springboard-AI/email_capstone/
+git clone https://github.com/philip-sparks/Springboard-MLE-Capstone.git
 ```
 
 2. Download dataset.
