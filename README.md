@@ -1,7 +1,16 @@
 ## Machine Learning-based Email Classifier Backend API Program
 
-This is an end-to-end implementation of an email classifier. Given a new email, a pyspark ml classification model will
+What this is: This is an end-to-end implementation of an email classifier. Given a new email, a pyspark ml classification model will
 assess which folder a user should place their email in, giving them automatic organization.
+
+Business case: Say you're at a company that's processing a lot of email messages. We want to save employees time by binning their incoming messages
+into appropriate folders. There's another filter that is already processing for spam, so we are not worried about that. However, of the messages
+that continue to get to the user, there needs to be further hierarchy. We will want the internal company emails to be placed in one folder, while
+the employee's personal email are sent in another. We'll also want external client emails in a folder of their own. While Outlook and Regex
+are definitely helpful in this manner, a trained machine learning approach will help employees manage workload automatically by not having them
+assess each new type of email. A couple of companies have already implemented such a system to my knowledge. 
+
+Note: Used for educational purposes only.
 
 ![](helper_images/pipeline.png)
 
