@@ -67,8 +67,8 @@ git clone https://github.com/philip-sparks/Springboard-AI/email_capstone/
     5. Add a rule type of TCP at 1234 for a source of 0.0.0.0/0 to open the /predict API 
     ```
 6. Install Filezilla and SSH into your EC2-EMR instance
-   - [Filezilla](https://filezilla-project.org/download.php?platform=osx)
-    ```
+  - [Filezilla](https://filezilla-project.org/download.php?platform=osx)
+     ```
     1. File -> Site Manager... -> New site
     2. Options: Protocol = SSH, Host = ec2 URL (e.g. ec2-54-160-243-194.compute-1.amazonaws.com)
     3. Options (cont.): Logon Type = Key file, User = hadoop, Key file = AWS created key.pem
