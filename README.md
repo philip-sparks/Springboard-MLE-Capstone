@@ -103,3 +103,5 @@ The Flask approach works, but it is not scalable. Another service, such as Kafka
 at a time.
 
 #### Where should we put preprocessing/model/test files?
+
+For simplicity, these files would go into another S3 bucket.
