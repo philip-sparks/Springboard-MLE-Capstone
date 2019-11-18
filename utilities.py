@@ -13,7 +13,7 @@ from pyspark.ml.classification import LogisticRegression
 from pyspark.ml.classification import DecisionTreeClassifier
 from pyspark.ml.classification import RandomForestClassifier
 from pyspark.ml.classification import MultilayerPerceptronClassifier
-from pyspark.mllib.tree import GradientBoostedTrees
+from pyspark.ml.classification import NaiveBayes
 
 
 def get_spark_session(app_name):
@@ -48,7 +48,10 @@ def get_model(model_string='LogisticRegression'):
         'LogisticRegression': LogisticRegression(maxIter=20, regParam=0.3, elasticNetParam=0),
         'DecisionTreeClassifier': DecisionTreeClassifier(),
         'RandomForestClassifier': RandomForestClassifier(numTrees=10),
-        'MultilayerPerceptronClassifier': MultilayerPerceptronClassifier(layers = [20, 5, 4, 6]),
-        'GradientBoostedTrees': GradientBoostedTrees()
+        # Deep Learning note: the number on neurons in the last layer needs to equal
+        # the number of categories. The number of neurons in the first layer
+        # needs to be equal to the vocabulary of count vectorizer
+        'MultilayerPerceptronClassifier': MultilayerPerceptronClassifier(tol=1e-3, maxIter=10000, layers = [500, 100, 20, 6], blockSize=128, seed=1234),
+        'NaiveBayes': NaiveBayes()
     }
     return models_dict[model_string]

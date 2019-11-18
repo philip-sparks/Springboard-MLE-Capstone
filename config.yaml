@@ -19,5 +19,5 @@ category_types:
     'emails_tagged/human_resources',
     'emails_tagged/personal'
   ]
-# Set your ML classification algorithm. Options are: LogisticRegression, DecisionTreeClassifier, RandomForestClassifier, MultilayerPerceptronClassifier, GradientBoostedTrees
-model_type: 'RandomForestClassifier'
+# Set your ML classification algorithm. Options are: LogisticRegression, DecisionTreeClassifier, RandomForestClassifier, MultilayerPerceptronClassifier, NaiveBayes
+model_type: 'NaiveBayes'

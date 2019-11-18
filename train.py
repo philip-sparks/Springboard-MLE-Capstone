@@ -3,6 +3,7 @@ Contains the code handling how the model is trained
 """
 
 # external imports
+import subprocess
 import pyspark.sql.functions as sqlf
 from pyspark.ml import Pipeline
 from pyspark.mllib.evaluation import MulticlassMetrics
@@ -20,7 +21,7 @@ import get_config
 import utilities
 
 
-def train_model(data_in, model_type='LogisticRegression'):
+def train_model(data_in, model_type="LogisticRegression"):
     """
     Train a model based on the provided data
 
@@ -36,7 +37,7 @@ def train_model(data_in, model_type='LogisticRegression'):
         inputCol="words", outputCol="filtered"
     ).setStopWords(add_stopwords)
     countVectors = CountVectorizer(
-        inputCol="filtered", outputCol="features", vocabSize=1000, minDF=1.0
+        inputCol="filtered", outputCol="features", vocabSize=500, minDF=1.0
     )
     label_stringIdx = StringIndexer(inputCol="tag", outputCol="label")
     ml_model = utilities.get_model(model_type)
@@ -80,6 +81,8 @@ def train_and_eval_model(conf, spark_in, sc_in):
     preds = pipelineModel.transform(testData)
 
     eval_model(preds, pipelineModel)
+
+    subprocess.check_call(["aws", "s3", "rm", conf["model_path"], "--recursive"])
 
     try:
         pipelineModel.save(conf["model_path"])
