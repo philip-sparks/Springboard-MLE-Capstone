@@ -29,7 +29,7 @@ def train_model(data_in, model_type="LogisticRegression"):
         data_in (SPARK dataframe) - data to be used for training 
             Has to contain the columns 'tag' and 'Body'
     Returns:
-        An trained machine learning model!
+        A trained machine learning model!
     """
     regexTokenizer = RegexTokenizer(inputCol="Body", outputCol="words", pattern="\\W")
     add_stopwords = ["http", "https", "amp", "rt", "t", "c", "the"]
